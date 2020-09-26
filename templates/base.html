@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+
+        {% endblock %}
+            Real State
+    </title>
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% include 'portion/navbar.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+
+{% include 'portion/footer.html' %}
+ <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+ <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>
