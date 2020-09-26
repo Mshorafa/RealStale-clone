@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+
 class TimeStampedModel(models.Model):
     """ Time Stamped Model  """
     created = models.DateTimeField(auto_now_add=True)  # Add Time and Date in the First Created
@@ -8,3 +10,4 @@ class TimeStampedModel(models.Model):
 
     class Meta:
         abstract = True
+

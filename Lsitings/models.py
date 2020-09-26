@@ -13,7 +13,7 @@ class Photo(core_model.TimeStampedModel):
 
 
 class Listings(core_model.TimeStampedModel):
-    """This model for listing fileds """
+    """This model for listing fields """
     title = models.CharField(max_length=100, null=False)
     address = models.CharField(max_length=100, null=False)
     city = models.CharField(max_length=100)

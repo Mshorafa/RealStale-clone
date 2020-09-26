@@ -7,7 +7,7 @@ from . import models as lsitings_model
 
 
 def listings(request):
-    _listings = lsitings_model.Listings.objects.all()
+    _listings = lsitings_model.Listings.objects.filter(is_published=True).order_by('-created')
     paginator = Paginator(_listings, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
