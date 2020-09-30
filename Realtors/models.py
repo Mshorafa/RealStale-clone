@@ -16,3 +16,10 @@ class Realtor (core_model.TimeStampedModel):
 
     def __str__(self):
         return f'{self.name}'
+
+    def is_mvp_bool(self):
+        if self.is_mvp==True:
+            return True
+        else:
+            return False
+    is_mvp_bool.boolean = False

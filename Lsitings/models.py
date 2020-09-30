@@ -1,5 +1,8 @@
 from django.db import models
+from django.conf import settings
+
 from core import models as core_model
+
 
 # Create your models here.
 class Photo(core_model.TimeStampedModel):
@@ -37,4 +40,16 @@ class Listings(core_model.TimeStampedModel):
             main_photo_1 = self.Photo.get(main_photo=True)
             return main_photo_1.img.url
         except ValueError:
-            None
+            return None
+
+    def get_listing_photos_6(self):
+        # list_photo = []
+        try:
+            # listing_photo = self.Photo.filter(main_photo=False).values('img')[:6]
+            # for photo in listing_photo:
+            #     list_photo.append(settings.MEDIA_URL+photo['img'])
+            # return list_photo
+            listing_photo = self.Photo.all()[1:7]
+            return listing_photo
+        except ValueError:
+            return None

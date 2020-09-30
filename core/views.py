@@ -15,5 +15,12 @@ def index(request):
 
 def about(request):
     top_realtors = Roaltors_model.Realtor.objects.all().order_by('-created')[:3]
+    try:
+        top_re = Roaltors_model.Realtor.objects.filter(is_mvp=True).order_by('-updated')[:1]
+        return render(request, 'Pages/about.html', {'realtors': top_realtors, 'tops': top_re})
+    except Roaltors_model.Realtor.DoesNotExist:
+        return 0
 
-    return render(request, 'Pages/about.html', {'realtors': top_realtors})
+
+def search(request):
+    return  render(request,'Pages/search.html')
