@@ -14,7 +14,6 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(f'This is Beas_rid = {BASE_DIR}')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -43,6 +42,8 @@ PROJECT_APPS = [
     'core.apps.CoreConfig',
     'Lsitings.apps.LsitingsConfig',
     'Realtors.apps.RealtorsConfig',
+    'accounts.apps.AccountsConfig',
+    'Contacts.apps.ContactsConfig'
     ]
 Therd_PARTY_APPS= [
     'django_seed',
@@ -150,4 +151,20 @@ STATICFILES_DIRS = [
 # Media folder
 MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/media/'
+
+# Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
+
+#Email
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.mohammedshurafa.me'
+EMAIL_PORT = 26
+EMAIL_HOST_USER = 'info@mohammedshurafa.me'
+EMAIL_HOST_PASSWORD = 'mshurafa@info_2020'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 

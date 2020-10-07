@@ -31,7 +31,7 @@ class CustomListingsAdmin(admin.ModelAdmin):
     ]
     list_display_links = ['title', 'address']
     list_filter = ['city', 'is_published']
-    search_fields = ['city', 'state', 'state', 'price']
+    search_fields = ['title','city', 'state', 'state', 'price']
     list_editable = ['is_published',]
 
 

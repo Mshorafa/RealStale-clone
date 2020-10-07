@@ -23,4 +23,6 @@ urlpatterns = [
     path('', include('core.urls', namespace='core'), name='core'),
     path('lsitings/', include('Lsitings.urls', namespace='lsitings'), name='lsitings'),
     path('realtors/', include('Realtors.urls', namespace='realtors'), name='realtors'),
+    path('accounts/', include('accounts.urls', namespace='accounts'), name='accounts'),
+    path('contacts/', include('Contacts.urls', namespace='contacts'), name='contacts'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

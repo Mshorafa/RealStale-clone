@@ -11,6 +11,9 @@ Home |
   <section id="showcase">
     <div class="container text-center">
       <div class="home-search p-5">
+          <div style="position: absolute;top: -60px ; left: 0;width: 100%">
+              {% include 'portion/_alert.html' with form=form %}
+          </div>
         <div class="overlay p-5">
           <h1 class="display-4 mb-4">
             Property Searching Just Got So Easy
@@ -66,7 +69,7 @@ Home |
                           <i class="fas fa-clock"></i> {{ listing.created|timesince }}</div>
                       </div>
                       <hr>
-                      <a href="#" class="btn btn-primary btn-block">More Info</a>
+                      <a href="{% url 'lsitings:listing' pk=listing.pk %}" class="btn btn-primary btn-block">More Info</a>
                     </div>
                   </div>
                 </div>
